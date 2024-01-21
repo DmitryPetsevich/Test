@@ -3,10 +3,10 @@ import Backdrop from '../backdrop/Backdrop';
 import Spinner from '../spinner/Spinner';
 
 interface ILoaderProps {
-  loading?: boolean;
+  loading: boolean;
 }
 
-const Loader: FC<ILoaderProps> = ({ loading = true }) =>
+const Loader: FC<ILoaderProps> = ({ loading }) =>
   loading ? (
     <Backdrop>
       <Spinner />
