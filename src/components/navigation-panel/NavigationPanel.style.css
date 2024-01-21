@@ -1,0 +1,28 @@
+.navigation-panel {
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+.link {
+  margin: 0 0.5rem;
+  padding: 0.25rem;
+  text-decoration: none;
+  color: black;
+}
+
+.link.active {
+  font-weight: bold;
+}
+
+.link:first-child {
+  margin-left: 0;
+}
+
+.link:last-child {
+  margin-right: 0;
+}
