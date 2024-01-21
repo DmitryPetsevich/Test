@@ -1,0 +1,15 @@
+.delimiter {
+  background-color: lightgray;
+}
+
+.delimiter.vertical {
+  width: 1px;
+  height: 100%;
+  margin: 0 0.25rem;
+}
+
+.delimiter.horizontal {
+  width: 100%;
+  height: 1px;
+  margin: 0.25rem 0;
+}
