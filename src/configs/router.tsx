@@ -1,6 +1,6 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import ErrorPage from '../components/router/error-page/ErrorPage';
+import ErrorPage from '../components/error-page/ErrorPage';
 
 const config: RouteObject[] = [
   {
