@@ -6,8 +6,9 @@ import { navigationConfig } from '../../configs/navigation';
 const NavigationPanel: FC = () => {
   return (
     <nav className="navigation-panel">
-      {navigationConfig.map(({ to, className, label }) => (
+      {navigationConfig.map(({ key, to, className, label }) => (
         <NavLink
+          key={key}
           to={to}
           className={({ isActive }) =>
             [className, isActive ? 'active' : ''].join(' ')
