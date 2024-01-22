@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { useRouteError } from 'react-router-dom';
+import { useTitle } from '../../../hooks/useTitle';
 import './ErrorPage.style.css';
 
 const ErrorPage: FC = () => {
+  useTitle('Тестовое задание - Ошибка');
   const error = useRouteError();
 
   return (

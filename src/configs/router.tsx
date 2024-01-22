@@ -1,6 +1,9 @@
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import ErrorPage from '../components/error-page/ErrorPage';
+import ErrorPage from '../components/pages/error-page/ErrorPage';
+import HomePage from '../components/pages/home-page/HomePage';
+import ThermistorChainPage from '../components/pages/thermistor-chain-page/ThermistorChainPage';
+import DeformationControlPage from '../components/pages/deformation-control/DeformationControl';
 
 const config: RouteObject[] = [
   {
@@ -10,15 +13,15 @@ const config: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <h1>HOME PAGE</h1>,
+        element: <HomePage />,
       },
       {
         path: 'measurements/:id',
-        element: <h1>ThermistorChain PAGE</h1>,
+        element: <ThermistorChainPage />,
       },
       {
         path: 'measurements/trend/:id',
-        element: <h1>DeformationControl PAGE</h1>,
+        element: <DeformationControlPage />,
       },
     ],
   },
