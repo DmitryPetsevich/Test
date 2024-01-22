@@ -15,7 +15,6 @@ export function useFetchData<T>(url: RequestInfo | URL, options?: RequestInit) {
         setData(data);
       })
       .catch((error) => {
-        console.log('error: ', error);
         setError(error);
       })
       .finally(() => {
