@@ -1,16 +1,26 @@
 import { FC } from 'react';
 import { useTitle } from '../../../hooks/useTitle';
 import { useFetchData } from '../../../hooks/useFetchData';
+import Table from '../../table/Table';
+import { IResponse } from '../../../interfaces/common';
+import { IThermistorChain } from '../../../interfaces/thermistorChain';
+import configuration from './configuration';
 
 const ThermistorChainPage: FC = () => {
   useTitle('Тестовое задание - Термокоса');
 
-  const { data, error } = useFetchData('/mock-data/termo_response.json');
+  const { data } = useFetchData<IResponse<IThermistorChain>>(
+    '/mock-data/termo_response.json'
+  );
 
-  console.log('data: ', data);
-  console.log('error: ', error);
+  const config = data ? configuration(data.data) : [];
 
-  return <h1>ThermistorChain Page</h1>;
+  return data ? (
+    <>
+      <h2>Термометрическая скважина</h2>
+      <Table<IThermistorChain> listingData={data?.data} columns={config} />
+    </>
+  ) : null;
 };
 
 export default ThermistorChainPage;
