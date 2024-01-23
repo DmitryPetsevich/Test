@@ -5,7 +5,7 @@ import { useFetchData } from '../../../hooks/useFetchData';
 const DeformationControlPage: FC = () => {
   useTitle('Тестовое задание - Деформационная марка');
 
-  const { data, error } = useFetchData('/mock-data/deformation_response.json');
+  const { data, error } = useFetchData('deformationResponse');
 
   console.log('data: ', data);
   console.log('error: ', error);

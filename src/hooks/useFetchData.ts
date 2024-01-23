@@ -1,7 +1,18 @@
 import { useEffect, useState } from 'react';
 import useLoaderContext from '../contexts/loader-context/useLoaderContext';
+import termoResponse from '../mocks/termo_response.json';
+import deformationResponse from '../mocks/deformation_response.json';
+import termoTrendResponse from '../mocks/termo_trend_response.json';
+import deformationTrendResponse from '../mocks/deformation_trend_response.json';
 
-export function useFetchData<T>(url: RequestInfo | URL, options?: RequestInit) {
+const responses = {
+  termoResponse,
+  termoTrendResponse,
+  deformationResponse,
+  deformationTrendResponse,
+};
+
+export function useFetchData<T>(responseType: keyof typeof responses) {
   const [data, setData] = useState<T>();
   const [error, setError] = useState(null);
   const { setLoading } = useLoaderContext();
@@ -9,20 +20,21 @@ export function useFetchData<T>(url: RequestInfo | URL, options?: RequestInit) {
   useEffect(() => {
     setLoading(true);
 
-    fetch(url, { ...options })
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(responses[responseType]);
+      }, 1500);
+    })
+      .then((responseData) => {
+        setData(responseData as T);
       })
       .catch((error) => {
         setError(error);
       })
       .finally(() => {
-        setTimeout(() => {
-          setLoading(false);
-        }, 1500);
+        setLoading(false);
       });
-  }, [url, options, setLoading]);
+  }, [responseType, setLoading]);
 
   return { data, error };
 }

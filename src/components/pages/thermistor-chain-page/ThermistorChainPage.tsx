@@ -9,9 +9,7 @@ import configuration from './configuration';
 const ThermistorChainPage: FC = () => {
   useTitle('Тестовое задание - Термокоса');
 
-  const { data } = useFetchData<IResponse<IThermistorChain>>(
-    '/mock-data/termo_response.json'
-  );
+  const { data } = useFetchData<IResponse<IThermistorChain>>('termoResponse');
 
   const config = data ? configuration(data.data) : [];
 
