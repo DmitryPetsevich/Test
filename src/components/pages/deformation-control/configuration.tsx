@@ -9,6 +9,11 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{new Date(data.time).toDateString()}</span>
       ),
+      props: {
+        style: {
+          background: 'lightskyblue',
+        },
+      },
     },
     {
       key: 'data.value',
@@ -16,6 +21,11 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{data?.data?.value?.toFixed(4) || '---'}</span>
       ),
+      props: {
+        style: {
+          background: '#55e8b6',
+        },
+      },
     },
     {
       key: 'data.delta',
@@ -23,6 +33,11 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{data?.data?.delta?.toFixed(4) || '---'}</span>
       ),
+      props: {
+        style: {
+          background: '#55e8b6',
+        },
+      },
     },
   ];
 

@@ -6,7 +6,7 @@ export interface IHeader {
   renderHead?: React.JSX.Element;
   renderCell?: (args: any) => React.JSX.Element;
   props?: {
-    [key: string]: string;
+    [key: string]: string | Object;
   };
   children?: IHeader[];
 }

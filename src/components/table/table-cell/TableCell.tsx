@@ -4,7 +4,7 @@ interface ITableCellProps {
   header?: boolean;
   children?: ReactNode;
   props?: {
-    [key: string]: string;
+    [key: string]: string | Object;
   };
 }
 

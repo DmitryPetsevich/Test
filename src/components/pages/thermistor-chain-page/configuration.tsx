@@ -15,6 +15,11 @@ function configuration(data: IThermistorChain[] = []) {
       renderCell: (data: IThermistorChain) => {
         return <span>{data.data[+key]?.value.toFixed(2) || ''}</span>;
       },
+      props: {
+        style: {
+          background: '#55e8b6',
+        },
+      },
     })
   );
 
@@ -24,6 +29,9 @@ function configuration(data: IThermistorChain[] = []) {
       label: 'Дата и время измерения',
       props: {
         rowSpan: '2',
+        style: {
+          background: 'lightskyblue',
+        },
       },
       renderCell: (data: IThermistorChain) => (
         <span>{new Date(data.time).toDateString()}</span>
@@ -39,6 +47,9 @@ function configuration(data: IThermistorChain[] = []) {
       ),
       props: {
         rowSpan: '2',
+        style: {
+          background: 'lightskyblue',
+        },
       },
       renderCell: (data: IThermistorChain) => (
         <span>{data.averageTemperature.toFixed(2)}</span>
@@ -50,6 +61,9 @@ function configuration(data: IThermistorChain[] = []) {
       children: dataColumns.sort((a, b) => (+a.key > +b.key ? 1 : -1)),
       props: {
         colSpan: `${dataColumns.length}`,
+        style: {
+          background: 'lightskyblue',
+        },
       },
     },
   ];
