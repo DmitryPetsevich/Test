@@ -6,10 +6,6 @@ export interface IDeformationControl extends ISensor {
 }
 
 interface IDeformationControlData {
-  [key: number]: IDeformationControlDataValue;
-}
-
-interface IDeformationControlDataValue {
   value: number;
   isValid: boolean;
   delta: number;

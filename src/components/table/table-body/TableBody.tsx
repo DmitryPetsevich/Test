@@ -14,8 +14,8 @@ const TableBody: FC<ITableBodyProps> = ({ rows, columns }) => {
 
   return (
     <tbody>
-      {rows.map((row) => (
-        <TableRow>
+      {rows.map((row, index) => (
+        <TableRow key={index}>
           {dataColumns.map(({ key, renderCell, label }) => (
             <TableCell key={key}>
               {renderCell ? renderCell(row) : label}
