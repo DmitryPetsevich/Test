@@ -5,7 +5,10 @@ export interface IHeader {
   label: string;
   renderHead?: React.JSX.Element;
   renderCell?: (args: any) => React.JSX.Element;
-  props?: {
+  thProps?: {
+    [key: string]: string | Object;
+  };
+  tdProps?: {
     [key: string]: string | Object;
   };
   children?: IHeader[];

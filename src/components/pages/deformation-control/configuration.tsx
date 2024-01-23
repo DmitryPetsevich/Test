@@ -9,7 +9,7 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{new Date(data.time).toDateString()}</span>
       ),
-      props: {
+      thProps: {
         style: {
           background: 'lightskyblue',
         },
@@ -21,7 +21,7 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{data?.data?.value?.toFixed(4) || '---'}</span>
       ),
-      props: {
+      thProps: {
         style: {
           background: '#55e8b6',
         },
@@ -33,7 +33,7 @@ function configuration(data: IDeformationControl[] = []) {
       renderCell: (data: IDeformationControl) => (
         <span>{data?.data?.delta?.toFixed(4) || '---'}</span>
       ),
-      props: {
+      thProps: {
         style: {
           background: '#55e8b6',
         },

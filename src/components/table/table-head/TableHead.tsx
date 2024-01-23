@@ -15,8 +15,8 @@ const TableHead: FC<ITableHeadProps> = ({ headers = [] }) => {
     <thead>
       {Object.entries(headerRows).map(([key, headerColumns]) => (
         <TableRow key={key}>
-          {headerColumns.map(({ key, label, renderHead, props }) => (
-            <TableCell key={key} header props={props}>
+          {headerColumns.map(({ key, label, renderHead, thProps }) => (
+            <TableCell key={key} header thProps={thProps}>
               {renderHead || label}
             </TableCell>
           ))}

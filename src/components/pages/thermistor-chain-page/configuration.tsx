@@ -15,9 +15,14 @@ function configuration(data: IThermistorChain[] = []) {
       renderCell: (data: IThermistorChain) => {
         return <span>{data.data[+key]?.value.toFixed(2) || ''}</span>;
       },
-      props: {
+      thProps: {
         style: {
           background: '#55e8b6',
+        },
+      },
+      tdProps: {
+        style: {
+          textAlign: 'center',
         },
       },
     })
@@ -27,7 +32,7 @@ function configuration(data: IThermistorChain[] = []) {
     {
       key: 'dateTime',
       label: 'Дата и время измерения',
-      props: {
+      thProps: {
         rowSpan: '2',
         style: {
           background: 'lightskyblue',
@@ -45,7 +50,7 @@ function configuration(data: IThermistorChain[] = []) {
           T<sub>e</sub>
         </span>
       ),
-      props: {
+      thProps: {
         rowSpan: '2',
         style: {
           background: 'lightskyblue',
@@ -59,7 +64,7 @@ function configuration(data: IThermistorChain[] = []) {
       key: 'deepth',
       label: 'Глубина, м',
       children: dataColumns.sort((a, b) => (+a.key > +b.key ? 1 : -1)),
-      props: {
+      thProps: {
         colSpan: `${dataColumns.length}`,
         style: {
           background: 'lightskyblue',

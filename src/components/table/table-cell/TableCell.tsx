@@ -3,7 +3,10 @@ import { FC, ReactNode } from 'react';
 interface ITableCellProps {
   header?: boolean;
   children?: ReactNode;
-  props?: {
+  thProps?: {
+    [key: string]: string | Object;
+  };
+  tdProps?: {
     [key: string]: string | Object;
   };
 }
@@ -11,12 +14,13 @@ interface ITableCellProps {
 const TableCell: FC<ITableCellProps> = ({
   header = false,
   children,
-  props,
+  thProps,
+  tdProps,
 }) => {
   return header ? (
-    <th {...props}>{children}</th>
+    <th {...thProps}>{children}</th>
   ) : (
-    <td {...props}>{children}</td>
+    <td {...tdProps}>{children}</td>
   );
 };
 
