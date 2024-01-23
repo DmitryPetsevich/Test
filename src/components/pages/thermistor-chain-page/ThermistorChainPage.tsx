@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 import { useTitle } from '../../../hooks/useTitle';
 import { useFetchData } from '../../../hooks/useFetchData';
 import Table from '../../table/Table';
@@ -11,12 +11,12 @@ const ThermistorChainPage: FC = () => {
 
   const { data } = useFetchData<IResponse<IThermistorChain>>('termoResponse');
 
-  const config = data ? configuration(data.data) : [];
+  const headers = useMemo(() => configuration(data?.data), [data]);
 
   return data ? (
     <>
       <h2>Термометрическая скважина</h2>
-      <Table<IThermistorChain> listingData={data?.data} columns={config} />
+      <Table<IThermistorChain> listingData={data?.data} headers={headers} />
     </>
   ) : null;
 };

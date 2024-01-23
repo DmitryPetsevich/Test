@@ -1,26 +1,26 @@
 import { groupBy } from 'lodash';
 import { IHeader } from '../interfaces';
 
-function transformToFlatData(columns: IHeader[], depth = 0): IHeader[] {
-  return columns.reduce<IHeader[]>((acc, column) => {
-    const col = { ...column, depth };
+function transformToFlatData(headers: IHeader[], depth = 0): IHeader[] {
+  return headers.reduce<IHeader[]>((acc, header) => {
+    const col = { ...header, depth };
 
     acc.push(col);
 
-    if (Object.prototype.hasOwnProperty.call(column, 'children')) {
-      return [...acc, ...transformToFlatData(column.children!, depth + 1)];
+    if (Object.prototype.hasOwnProperty.call(header, 'children')) {
+      return [...acc, ...transformToFlatData(header.children!, depth + 1)];
     }
 
     return acc;
   }, []);
 }
 
-export function useTableHeader(data: IHeader[]) {
-  const flatHeaderData = transformToFlatData(data);
+export function useTableHeader(headers: IHeader[]) {
+  const flatHeaderData = transformToFlatData(headers);
 
   const headerRows = groupBy(flatHeaderData, 'depth');
   const dataColumns = flatHeaderData.filter(
-    (column) => !Object.prototype.hasOwnProperty.call(column, 'children')
+    (header) => !Object.prototype.hasOwnProperty.call(header, 'children')
   );
 
   return {

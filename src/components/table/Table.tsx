@@ -6,14 +6,14 @@ import './Table.style.css';
 
 interface ITableProps<T> {
   listingData: T[];
-  columns: IHeader[];
+  headers: IHeader[];
 }
 
-function Table<T>({ listingData, columns }: ITableProps<T>) {
+function Table<T>({ listingData, headers }: ITableProps<T>) {
   return (
     <TableContainer>
-      <TableHead columns={columns}></TableHead>
-      <TableBody rows={listingData} columns={columns}></TableBody>
+      <TableHead headers={headers}></TableHead>
+      <TableBody rows={listingData} columns={headers}></TableBody>
     </TableContainer>
   );
 }

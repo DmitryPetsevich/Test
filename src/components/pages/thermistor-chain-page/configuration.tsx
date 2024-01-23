@@ -1,7 +1,7 @@
 import { IThermistorChain } from '../../../interfaces/thermistorChain';
 import { IHeader } from '../../table/interfaces';
 
-function configuration(data: IThermistorChain[]) {
+function configuration(data: IThermistorChain[] = []) {
   const uniqueDataColumnKeys = data.reduce((acc, current) => {
     Object.keys(current.data).forEach((key) => acc.add(key));
 
@@ -13,7 +13,7 @@ function configuration(data: IThermistorChain[]) {
       key,
       label: key,
       renderCell: (data: IThermistorChain) => {
-        return <span>{data.data[+key]?.value.toFixed(1) || ''}</span>;
+        return <span>{data.data[+key]?.value.toFixed(2) || ''}</span>;
       },
     })
   );

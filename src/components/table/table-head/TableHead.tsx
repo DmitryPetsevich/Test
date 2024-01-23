@@ -5,11 +5,11 @@ import TableRow from '../table-row/TableRow';
 import TableCell from '../table-cell/TableCell';
 
 interface ITableHeadProps {
-  columns: IHeader[];
+  headers: IHeader[];
 }
 
-const TableHead: FC<ITableHeadProps> = ({ columns = [] }) => {
-  const { headerRows } = useTableHeader(columns);
+const TableHead: FC<ITableHeadProps> = ({ headers = [] }) => {
+  const { headerRows } = useTableHeader(headers);
 
   return (
     <thead>
