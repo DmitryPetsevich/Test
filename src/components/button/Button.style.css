@@ -1,4 +1,4 @@
-.dialog-button {
+.button {
   display: inline-block;
   padding: 0 12px;
   margin-bottom: 8px;
@@ -15,9 +15,6 @@
   cursor: pointer;
 }
 
-.dialog-button:focus-visible {
-  box-shadow: 0 0 0 2px #666;
-}
-.dialog-button:hover {
+.button:hover {
   background-color: #dbe7f2;
 }

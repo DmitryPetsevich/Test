@@ -1,7 +1,7 @@
 import { FC, useCallback } from 'react';
 import { DialogName } from '../../contexts/dialog-context/DialogProvider';
 import useDialogContext from '../../contexts/dialog-context/useDialogContext';
-import './DialogButton.style.css';
+import Button from '../button/Button';
 
 interface IDialogButtonProps {
   dialogName: DialogName;
@@ -20,11 +20,7 @@ const DialogButton: FC<IDialogButtonProps> = ({
     open(dialogName, dialogProps);
   }, [open, dialogName, dialogProps]);
 
-  return (
-    <button onClick={handleClick} className="dialog-button">
-      {label}
-    </button>
-  );
+  return <Button label={label} onClick={handleClick} />;
 };
 
 export default DialogButton;
