@@ -1,13 +1,14 @@
 import { FC, ReactNode, useCallback, useState } from 'react';
 import DialogContext from './DialogContext';
 import Backdrop from '../../components/backdrop/Backdrop';
+import ThermistorChainChart from '../../components/thermistor-chart/ThermistorChainChart';
 
 interface IDialogProviderProps {
   children?: ReactNode;
 }
 
 const charts = {
-  thermistorChain: (props: any) => <h1>THERMISTOR CHAIN CHART</h1>,
+  thermistorChain: (props: any) => <ThermistorChainChart {...props} />,
   deformationControl: (props: any) => <h1>DEFORMATION CONTROL CHART</h1>,
 };
 
