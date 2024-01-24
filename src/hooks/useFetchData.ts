@@ -4,8 +4,7 @@ import termoResponse from '../mocks/termo_response.json';
 import deformationResponse from '../mocks/deformation_response.json';
 import termoTrendResponse from '../mocks/termo_trend_response.json';
 import deformationTrendResponse from '../mocks/deformation_trend_response.json';
-import { IResponse, ISensor } from '../interfaces/common';
-import moment from 'moment';
+import { IResponse } from '../interfaces/common';
 
 const responses = {
   termoResponse,
@@ -14,10 +13,8 @@ const responses = {
   deformationTrendResponse,
 };
 
-export function useFetchData<T extends ISensor>(
-  responseType: keyof typeof responses
-) {
-  const [data, setData] = useState<IResponse<T>>();
+export function useFetchData<T>(responseType: keyof typeof responses) {
+  const [data, setData] = useState<IResponse<T>>({} as IResponse<T>);
   const [error, setError] = useState(null);
   const { setLoading } = useLoaderContext();
 
@@ -30,15 +27,8 @@ export function useFetchData<T extends ISensor>(
       }, 1500);
     })
       .then((responseData) => responseData as IResponse<T>)
-      .then((responseData) => {
-        const data = responseData.data.sort((a, b) =>
-          moment(a.time).isBefore(moment(b.time)) ? 1 : -1
-        );
-        const sorted = {
-          ...responseData,
-          data,
-        };
-        setData(sorted);
+      .then((data) => {
+        setData(data);
       })
       .catch((error) => {
         setError(error);
@@ -48,5 +38,5 @@ export function useFetchData<T extends ISensor>(
       });
   }, [responseType, setLoading]);
 
-  return { data, error, listingData: data?.data };
+  return { data, error };
 }

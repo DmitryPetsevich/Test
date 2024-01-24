@@ -1,6 +1,6 @@
-import { ISensor } from '../common';
+import { IBaseObject } from '../common';
 
-export interface IDeformationControl extends ISensor {
+export interface IDeformationControl extends IBaseObject {
   data: IDeformationControlData;
   criticalDelta: number;
 }

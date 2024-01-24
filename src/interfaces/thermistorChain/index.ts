@@ -1,6 +1,6 @@
-import { ISensor } from '../common';
+import { IBaseObject } from '../common';
 
-export interface IThermistorChain extends ISensor {
+export interface IThermistorChain extends IBaseObject {
   data: IThermistorChainData;
   criticalAverage: number;
   averageTemperature: number;
@@ -13,4 +13,12 @@ interface IThermistorChainData {
 interface IThermistorChainDataValue {
   value: number;
   isValid: boolean;
+}
+
+export interface IThermistorChainChartData {
+  startDate: string;
+  criticalEndDate: string;
+  points: {
+    [key: string]: number;
+  };
 }
