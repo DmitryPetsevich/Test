@@ -5,6 +5,7 @@ import { useFetchData } from '../../../hooks/useFetchData';
 import { IDeformationControl } from '../../../interfaces/deformationControl';
 import Table from '../../table/Table';
 import configuration from './configuration';
+import DialogButton from '../../dialog-button/DialogButton';
 
 const DeformationControlPage: FC = () => {
   useTitle('Тестовое задание - Деформационная марка');
@@ -26,7 +27,7 @@ const DeformationControlPage: FC = () => {
 
   return listingData.length ? (
     <>
-      <h2>Деформационная марка</h2>
+      <DialogButton dialogName="deformationControl" label="График" />
       <Table<IDeformationControl> listingData={listingData} headers={headers} />
     </>
   ) : null;

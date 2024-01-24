@@ -5,6 +5,7 @@ import Table from '../../table/Table';
 import { IThermistorChain } from '../../../interfaces/thermistorChain';
 import configuration from './configuration';
 import moment from 'moment';
+import DialogButton from '../../dialog-button/DialogButton';
 
 const ThermistorChainPage: FC = () => {
   useTitle('Тестовое задание - Термокоса');
@@ -26,7 +27,7 @@ const ThermistorChainPage: FC = () => {
 
   return listingData.length ? (
     <>
-      <h2>Термометрическая скважина</h2>
+      <DialogButton dialogName="thermistorChain" label="График" />
       <Table<IThermistorChain> listingData={listingData} headers={headers} />
     </>
   ) : null;
