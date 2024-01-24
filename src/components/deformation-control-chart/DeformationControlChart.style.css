@@ -1,0 +1,13 @@
+.chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  padding: 0.5rem;
+  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

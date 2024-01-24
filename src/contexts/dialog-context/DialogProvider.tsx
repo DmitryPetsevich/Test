@@ -2,6 +2,7 @@ import { FC, ReactNode, useCallback, useState } from 'react';
 import DialogContext from './DialogContext';
 import Backdrop from '../../components/backdrop/Backdrop';
 import ThermistorChainChart from '../../components/thermistor-chart/ThermistorChainChart';
+import DeformationControlChart from '../../components/deformation-control-chart/DeformationControlChart';
 
 interface IDialogProviderProps {
   children?: ReactNode;
@@ -9,7 +10,7 @@ interface IDialogProviderProps {
 
 const charts = {
   thermistorChain: (props: any) => <ThermistorChainChart {...props} />,
-  deformationControl: (props: any) => <h1>DEFORMATION CONTROL CHART</h1>,
+  deformationControl: (props: any) => <DeformationControlChart {...props} />,
 };
 
 export type DialogName = keyof typeof charts;

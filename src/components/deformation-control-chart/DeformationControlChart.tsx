@@ -4,7 +4,7 @@ import { useFetchData } from '../../hooks/useFetchData';
 import { IThermistorChainChartData } from '../../interfaces/thermistorChain';
 import useDialogContext from '../../contexts/dialog-context/useDialogContext';
 import Button from '../button/Button';
-import './ThermistorChainChart.style.css';
+import './DeformationControlChart.style.css';
 
 function prepareChartData(obj: { [key: string]: number }): {
   x: Array<string>;
@@ -24,12 +24,13 @@ function prepareChartData(obj: { [key: string]: number }): {
   };
 }
 
-const ThermistorChainChart: FC = () => {
+const DeformationControlChart: FC = () => {
   const [xAxis, setXAxis] = useState<Array<string>>([]);
   const [yAxis, setYAxis] = useState<Array<number>>([]);
 
-  const { data } =
-    useFetchData<IThermistorChainChartData>('termoTrendResponse');
+  const { data } = useFetchData<IThermistorChainChartData>(
+    'deformationTrendResponse'
+  );
 
   const { close } = useDialogContext();
 
@@ -54,10 +55,10 @@ const ThermistorChainChart: FC = () => {
             marker: { color: 'red' },
           },
         ]}
-        layout={{ width: 800, height: 400, title: 'Термокоса' }}
+        layout={{ width: 800, height: 400, title: 'Деформационная марка' }}
       />
     </div>
   ) : null;
 };
 
-export default ThermistorChainChart;
+export default DeformationControlChart;
