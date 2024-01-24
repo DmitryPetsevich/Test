@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { router } from './configs/router';
 import LoaderProvider from './contexts/loader-context/LoaderProvider';
+import DialogProvider from './contexts/dialog-context/DialogProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <LoaderProvider>
-      <RouterProvider router={router} />
+      <DialogProvider>
+        <RouterProvider router={router} />
+      </DialogProvider>
     </LoaderProvider>
   </React.StrictMode>
 );
