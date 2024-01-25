@@ -1,9 +1,9 @@
-import './App.style.css';
-import Loader from './components/loader/Loader';
-import NavigationPanel from './components/navigation-panel/NavigationPanel';
-import Delimiter from './components/delimeter/Delimeter';
-import PageContent from './components/page-content/PageContent';
+import Loader from './components/common/loader/Loader';
+import NavigationPanel from './components/common/navigation-panel/NavigationPanel';
+import Delimiter from './components/common/delimeter/Delimeter';
+import PageContent from './components/common/page-content/PageContent';
 import useLoaderContext from './contexts/loader-context/useLoaderContext';
+import './App.style.css';
 
 function App() {
   const { loading } = useLoaderContext();

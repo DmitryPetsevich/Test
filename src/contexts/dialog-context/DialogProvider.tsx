@@ -1,8 +1,8 @@
 import { FC, ReactNode, useCallback, useState } from 'react';
 import DialogContext from './DialogContext';
-import Backdrop from '../../components/backdrop/Backdrop';
-import ThermistorChainChart from '../../components/thermistor-chart/ThermistorChainChart';
-import DeformationControlChart from '../../components/deformation-control-chart/DeformationControlChart';
+import Backdrop from '../../components/common/backdrop/Backdrop';
+import ThermistorChainChart from '../../components/charts/thermistor-chain-chart/ThermistorChainChart';
+import DeformationControlChart from '../../components/charts/deformation-control-chart/DeformationControlChart';
 
 interface IDialogProviderProps {
   children?: ReactNode;

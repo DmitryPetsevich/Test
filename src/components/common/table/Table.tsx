@@ -12,8 +12,8 @@ interface ITableProps<T> {
 function Table<T>({ listingData, headers }: ITableProps<T>) {
   return (
     <TableContainer>
-      <TableHead headers={headers}></TableHead>
-      <TableBody rows={listingData} columns={headers}></TableBody>
+      <TableHead headers={headers} />
+      <TableBody rows={listingData} columns={headers} />
     </TableContainer>
   );
 }

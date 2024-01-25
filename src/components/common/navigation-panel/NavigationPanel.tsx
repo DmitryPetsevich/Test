@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavigationPanel.style.css';
-import { navigationConfig } from '../../configs/navigation';
+import { navigationConfig } from '../../../configs/navigation';
 
 const NavigationPanel: FC = () => {
   return (

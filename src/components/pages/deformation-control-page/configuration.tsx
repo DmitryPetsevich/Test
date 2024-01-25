@@ -1,5 +1,5 @@
 import { IDeformationControl } from '../../../interfaces/deformationControl';
-import { IHeader } from '../../table/interfaces';
+import { IHeader } from '../../common/table/interfaces';
 
 function configuration(data: IDeformationControl[] = []) {
   const config: IHeader[] = [

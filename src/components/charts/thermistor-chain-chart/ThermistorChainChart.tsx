@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { useFetchData } from '../../hooks/useFetchData';
-import { IThermistorChainChartData } from '../../interfaces/thermistorChain';
-import useDialogContext from '../../contexts/dialog-context/useDialogContext';
-import Button from '../button/Button';
-import './DeformationControlChart.style.css';
+import { useFetchData } from '../../../hooks/useFetchData';
+import { IThermistorChainChartData } from '../../../interfaces/thermistorChain';
+import useDialogContext from '../../../contexts/dialog-context/useDialogContext';
+import Button from '../../common/button/Button';
+import './ThermistorChainChart.style.css';
 
 function prepareChartData(obj: { [key: string]: number }): {
   x: Array<string>;
@@ -24,13 +24,12 @@ function prepareChartData(obj: { [key: string]: number }): {
   };
 }
 
-const DeformationControlChart: FC = () => {
+const ThermistorChainChart: FC = () => {
   const [xAxis, setXAxis] = useState<Array<string>>([]);
   const [yAxis, setYAxis] = useState<Array<number>>([]);
 
-  const { data } = useFetchData<IThermistorChainChartData>(
-    'deformationTrendResponse'
-  );
+  const { data } =
+    useFetchData<IThermistorChainChartData>('termoTrendResponse');
 
   const { close } = useDialogContext();
 
@@ -55,10 +54,10 @@ const DeformationControlChart: FC = () => {
             marker: { color: 'red' },
           },
         ]}
-        layout={{ width: 800, height: 400, title: 'Деформационная марка' }}
+        layout={{ width: 800, height: 400, title: 'Термокоса' }}
       />
     </div>
   ) : null;
 };
 
-export default DeformationControlChart;
+export default ThermistorChainChart;

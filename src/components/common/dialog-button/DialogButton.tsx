@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
-import { DialogName } from '../../contexts/dialog-context/DialogProvider';
-import useDialogContext from '../../contexts/dialog-context/useDialogContext';
+import { DialogName } from '../../../contexts/dialog-context/DialogProvider';
+import useDialogContext from '../../../contexts/dialog-context/useDialogContext';
 import Button from '../button/Button';
 
 interface IDialogButtonProps {

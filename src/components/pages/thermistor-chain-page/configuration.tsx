@@ -1,5 +1,5 @@
 import { IThermistorChain } from '../../../interfaces/thermistorChain';
-import { IHeader } from '../../table/interfaces';
+import { IHeader } from '../../common/table/interfaces';
 
 function configuration(data: IThermistorChain[] = []) {
   const uniqueDataColumnKeys = data.reduce((acc, current) => {

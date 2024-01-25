@@ -1,11 +1,11 @@
 import { FC, useEffect, useMemo, useState } from 'react';
 import { useTitle } from '../../../hooks/useTitle';
 import { useFetchData } from '../../../hooks/useFetchData';
-import Table from '../../table/Table';
+import Table from '../../common/table/Table';
 import { IThermistorChain } from '../../../interfaces/thermistorChain';
 import configuration from './configuration';
 import moment from 'moment';
-import DialogButton from '../../dialog-button/DialogButton';
+import DialogButton from '../../common/dialog-button/DialogButton';
 
 const ThermistorChainPage: FC = () => {
   useTitle('Тестовое задание - Термокоса');

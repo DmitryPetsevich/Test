@@ -3,9 +3,9 @@ import moment from 'moment';
 import { useTitle } from '../../../hooks/useTitle';
 import { useFetchData } from '../../../hooks/useFetchData';
 import { IDeformationControl } from '../../../interfaces/deformationControl';
-import Table from '../../table/Table';
+import Table from '../../common/table/Table';
 import configuration from './configuration';
-import DialogButton from '../../dialog-button/DialogButton';
+import DialogButton from '../../common/dialog-button/DialogButton';
 
 const DeformationControlPage: FC = () => {
   useTitle('Тестовое задание - Деформационная марка');
