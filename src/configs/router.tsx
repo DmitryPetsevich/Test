@@ -16,11 +16,11 @@ const config: RouteObject[] = [
         element: <HomePage />,
       },
       {
-        path: 'measurements/:id',
+        path: 'thermistor-chain',
         element: <ThermistorChainPage />,
       },
       {
-        path: 'measurements/trend/:id',
+        path: 'deformation-control',
         element: <DeformationControlPage />,
       },
     ],

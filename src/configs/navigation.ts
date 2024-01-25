@@ -14,13 +14,13 @@ export const navigationConfig: INavigationLink[] = [
   },
   {
     key: 'thermistorChain',
-    to: 'measurements/1',
+    to: 'thermistor-chain',
     label: 'Термокоса',
     className: 'link',
   },
   {
     key: 'deformationControl',
-    to: 'measurements/trend/2',
+    to: 'deformation-control',
     label: 'Деформационная марка',
     className: 'link',
   },
